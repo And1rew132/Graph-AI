@@ -2,6 +2,8 @@
 
 A Node Graph based AI tool that supports prompt per node, where each node can execute AI operations and pass results to the next node. Designed to create visual workflows for AI image generation and text processing using APIs like Hugging Face.
 
+🚀 **[Try it live on GitHub Pages!](https://and1rew132.github.io/Graph-AI/)**
+
 ## Features
 
 - **Visual Node Graph Interface**: Drag-and-drop node editor using React Flow
@@ -53,6 +55,16 @@ npm run dev
 ```bash
 npm run build
 ```
+
+### Deployment
+
+The application is automatically deployed to GitHub Pages when changes are pushed to the main branch. The deployment is handled by GitHub Actions and includes:
+
+- Automated building and testing
+- Lint checking and type validation
+- Static file deployment to GitHub Pages
+
+You can access the live application at: https://and1rew132.github.io/Graph-AI/
 
 ## Technology Stack
 
