@@ -282,3 +282,277 @@ body {
 .react-flow__handle.react-flow__handle-top {
   top: -6px;
 }
+
+/* Model Configuration Sidebar */
+.model-config-sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.model-config-sidebar {
+  background: white;
+  width: 400px;
+  height: 100vh;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.2rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6c757d;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.close-button:hover {
+  background: #e9ecef;
+  color: #495057;
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.current-model-section,
+.setup-info-section,
+.model-selection-section,
+.helpful-links-section {
+  margin-bottom: 1.5rem;
+}
+
+.current-model-section h4,
+.setup-info-section h4,
+.model-selection-section h4,
+.helpful-links-section h4 {
+  margin: 0 0 0.75rem 0;
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.current-model {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 0.75rem;
+}
+
+.current-model code {
+  background: none;
+  color: #495057;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.setup-info {
+  background: #e7f3ff;
+  border: 1px solid #b8daff;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.setup-info p {
+  margin: 0 0 0.5rem 0;
+}
+
+.setup-info p:last-child {
+  margin-bottom: 0;
+}
+
+.info-text {
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.doc-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.doc-link:hover {
+  text-decoration: underline;
+}
+
+.model-search {
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.loading {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  padding: 1rem;
+}
+
+.models-list {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+.model-item {
+  padding: 0.75rem;
+  border-bottom: 1px solid #dee2e6;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.model-item:last-child {
+  border-bottom: none;
+}
+
+.model-item:hover {
+  background: #f8f9fa;
+}
+
+.model-item.current {
+  background: #e7f3ff;
+  border-left: 4px solid #007bff;
+}
+
+.model-info {
+  margin-bottom: 0.5rem;
+}
+
+.model-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.model-author {
+  color: #6c757d;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.model-description {
+  color: #495057;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  line-height: 1.3;
+}
+
+.model-stats {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.stat {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.helpful-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.helpful-links li {
+  margin-bottom: 0.5rem;
+}
+
+.helpful-links li:last-child {
+  margin-bottom: 0;
+}
+
+.helpful-links a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.helpful-links a:hover {
+  text-decoration: underline;
+}
+
+/* Model configuration button in node header */
+.model-config-button {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.model-config-button:hover {
+  background: #5a6268;
+}
+
+.node-header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.model-display {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.model-display-label {
+  color: #6c757d;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.model-display-value {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  color: #495057;
+  word-break: break-all;
+}
