@@ -17,11 +17,6 @@ import { TextNode, ImageNode } from './CustomNodes';
 import { NodeData, ImageResult, HuggingFaceConfig } from '../types';
 import { huggingFaceAPI } from '../utils/api';
 
-const nodeTypes: NodeTypes = {
-  textNode: TextNode,
-  imageNode: ImageNode,
-};
-
 const initialNodes: FlowNode[] = [
   {
     id: '1',
@@ -59,6 +54,31 @@ export const Graph: React.FC<GraphProps> = ({ apiKey }) => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const [isExecuting, setIsExecuting] = useState(false);
+
+  const handleModelChange = useCallback((nodeId: string, model: string) => {
+    setNodes((nds) => 
+      nds.map((node) => {
+        if (node.id === nodeId) {
+          return {
+            ...node,
+            data: {
+              ...node.data,
+              apiConfig: {
+                ...node.data.apiConfig,
+                model: model
+              }
+            }
+          };
+        }
+        return node;
+      })
+    );
+  }, [setNodes]);
+
+  const nodeTypes: NodeTypes = {
+    textNode: (props) => <TextNode {...props} onModelChange={handleModelChange} />,
+    imageNode: (props) => <ImageNode {...props} onModelChange={handleModelChange} />,
+  };
 
   const onConnect = useCallback(
     (params: Connection) => setEdges((eds) => addEdge(params, eds)),

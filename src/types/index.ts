@@ -42,3 +42,28 @@ export interface HuggingFaceConfig {
   model: string;
   endpoint?: string;
 }
+
+export interface ModelInfo {
+  id: string;
+  author?: string;
+  downloads?: number;
+  likes?: number;
+  tags?: string[];
+  task?: string;
+  description?: string;
+}
+
+export interface ModelCategory {
+  name: string;
+  task: string;
+  models: ModelInfo[];
+}
+
+export interface ModelConfigSidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+  nodeId: string;
+  currentModel: string;
+  nodeType: 'text-gen' | 'image-gen';
+  onModelChange: (nodeId: string, model: string) => void;
+}
