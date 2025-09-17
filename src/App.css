@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.api-key-toggle {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.api-key-toggle:hover {
+  background: #2980b9;
+}
+
+.api-key-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.api-key-input input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 250px;
+}
+
+.api-key-input small {
+  opacity: 0.8;
+  font-size: 0.8rem;
+}
+
+.api-key-input a {
+  color: #3498db;
+}
+
+.app-main {
+  flex: 1;
+  position: relative;
+}
+
+.app-footer {
+  background: #34495e;
+  color: white;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.toolbar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.toolbar button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.toolbar button:hover:not(:disabled) {
+  background: #2980b9;
+}
+
+.toolbar button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Custom Node Styles */
+.node-container {
+  background: white;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  min-width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+}
+
+.text-node {
+  border-color: #3498db;
+}
+
+.image-node {
+  border-color: #e74c3c;
+}
+
+.node-header {
+  background: #f8f9fa;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e1e5e9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px 6px 0 0;
+}
+
+.node-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.node-type {
+  background: #ecf0f1;
+  color: #7f8c8d;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.text-node .node-type {
+  background: #ebf3fd;
+  color: #3498db;
+}
+
+.image-node .node-type {
+  background: #fdeaea;
+  color: #e74c3c;
+}
+
+.node-content {
+  padding: 1rem;
+}
+
+.prompt-display {
+  background: #f8f9fa;
+  border: 1px dashed #dee2e6;
+  padding: 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  min-height: 60px;
+  margin-bottom: 0.5rem;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.prompt-display:hover {
+  background: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.prompt-editor textarea {
+  width: 100%;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+  margin-bottom: 0.5rem;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editor-actions button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.editor-actions button:last-child {
+  background: #6c757d;
+}
+
+.editor-actions button:hover {
+  opacity: 0.9;
+}
+
+.result-display {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #e8f5e8;
+  border: 1px solid #c3e6c3;
+  border-radius: 4px;
+}
+
+.result-display strong {
+  color: #155724;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.result-display p {
+  margin: 0;
+  color: #155724;
+  line-height: 1.4;
+}
+
+.image-result {
+  margin-top: 1rem;
+  text-align: center;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+.image-result img {
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* React Flow Overrides */
+.react-flow__node {
+  cursor: default;
+}
+
+.react-flow__handle {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #3498db;
+  background: white;
+}
+
+.react-flow__handle.react-flow__handle-bottom {
+  bottom: -6px;
+}
+
+.react-flow__handle.react-flow__handle-top {
+  top: -6px;
+}
